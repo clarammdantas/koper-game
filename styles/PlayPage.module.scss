@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+
+.score {
+    display: flex;
+    justify-content: center;
+}
+
+.score_font {
+    color: #ffffff;
+    font-size: 35px;
+    font-family: 'Graduate'
+}
+
+.card_choice {
+    height: 350px;
+    width: 250px;
+    background-size: 250px 350px !important;
+    background: url('../public/option9.jpg');
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.card_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.human_options {
+    display: flex;
+    flex-direction: column;
+}
+
+.plays {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.rock {
+    height: 50px;
+    width: 50px;
+    background-size: 50px 50px !important;
+    background: url('../public/rock.svg');
+    border-radius: 20px;
+}
+
+.rock:hover {
+    cursor: pointer;
+}
+
+.paper {
+    height: 50px;
+    width: 50px;
+    background-size: 50px 50px !important;
+    background: url('../public/paper.svg');
+    border-radius: 20px;
+}
+
+.paper:hover {
+    cursor: pointer;
+}
+
+.scissors {
+    height: 50px;
+    width: 50px;
+    background-size: 50px 50px !important;
+    background: url('../public/scissors.svg');
+    border-radius: 20px;
+}
+
+.scissors:hover {
+    cursor: pointer;
+}
+
+.lizard {
+    height: 50px;
+    width: 50px;
+    background-size: 50px 50px !important;
+    background: url('../public/lizard.svg');
+    border-radius: 20px;
+}
+
+.lizard:hover {
+    cursor: pointer;
+}
+
+.spock {
+    height: 50px;
+    width: 50px;
+    background-size: 50px 50px !important;
+    background: url('../public/spock.svg');
+    border-radius: 20px;
+}
+
+.spock:hover {
+    cursor: pointer;
+}
