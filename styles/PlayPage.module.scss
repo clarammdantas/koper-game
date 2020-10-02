@@ -2,13 +2,21 @@
 
 .score {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .score_font {
     color: #ffffff;
     font-size: 35px;
-    font-family: 'Graduate'
+    font-family: 'Graduate';
+}
+
+.round_result_font {
+    color: #ffffff;
+    font-size: 18px;
+    font-family: 'Graduate';
+    margin-bottom: 4rem;
 }
 
 .card_choice {
