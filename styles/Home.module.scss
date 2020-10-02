@@ -1,0 +1,34 @@
+.game_options {
+    display: flex;
+}
+
+.md3_container {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2rem;
+}
+
+.md5_container {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2rem;
+}
+
+.game_option_button {
+    background-color: #ff915c;
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 14px 40px;
+    border: 2px solid #ff915c;
+    color: #ffffff;
+}
+
+.game_option_button:hover {
+    cursor: pointer;
+}
