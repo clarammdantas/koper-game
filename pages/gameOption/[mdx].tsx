@@ -11,6 +11,10 @@ import Card from '../../components/Cards'
 // Utils
 import getRoundResult, { computerPick, mapResult, mapNumToPlayer } from '../../utils/gameUtils'
 
+// Fontawesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
+
 interface GameOptionType {
     rounds: number
 }
@@ -58,6 +62,16 @@ const GameOption: React.FC<GameOptionType> = ({ rounds }) => {
     return (
         <React.Fragment>
             <div className={styles.score}>
+                <a
+                    className={styles.info_button}
+                    target='_blank'
+                    href='https://www.youtube.com/watch?v=abQj0pQkSOY'>
+                    <FontAwesomeIcon
+                        icon={faQuestionCircle}
+                        size='sm'
+                        className={styles.info_icon}
+                    />
+                </a>
                 <p className={styles.score_font}>
                     <strong>{currentScore[0]} - {currentScore[1]}</strong>
                 </p>
