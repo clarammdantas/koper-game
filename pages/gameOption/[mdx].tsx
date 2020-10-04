@@ -1,5 +1,6 @@
 import { GetStaticPaths } from 'next'
 import React, { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 // Styles
 import styles from '../../styles/PlayPage.module.scss'
@@ -20,7 +21,8 @@ const GameOption: React.FC<GameOptionType> = ({ rounds }) => {
     const [roundWinner, setRoundWinner] = useState<string>('');
     const [humanPlay, setHumanPlay] = useState<string>('');
     const [computerPlay, setComputerPlay] = useState<string>('');
-    let winner = '';
+    const router = useRouter();
+    let winner = 0;
 
     const makePlay = (human: string) => {
         const computer = computerPick();
@@ -40,13 +42,16 @@ const GameOption: React.FC<GameOptionType> = ({ rounds }) => {
     useEffect(() => {
         if (rounds === 3) {
             if (currentScore[0] == 2 || currentScore[1] == 2) {
-                winner = currentScore[0] == 2 ? 'voce ganhou' : 'virgu ganhou';
+                winner = currentScore[0] == 2 ? 1 : 2;
             }
         } else if (rounds === 5) {
-            console.log(currentScore);
             if (currentScore[0] == 3 || currentScore[1] == 3) {
-                winner = currentScore[0] == 3 ? 'voce ganhou' : 'virgu ganhou';
+                winner = currentScore[0] == 3 ? 1 : 2;
             }
+        }
+
+        if (winner > 0) {
+            router.push('/endGame/' + winner);
         }
     });
 
