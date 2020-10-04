@@ -81,11 +81,31 @@ const GameOption: React.FC<GameOptionType> = ({ rounds }) => {
                 <div className={styles.human_options}>
                     <Card imagePath={humanPlay} />
                     <div className={styles.plays}>
-                        <div className={styles.rock} onClick={() => makePlay('rock')}></div>
-                        <div className={styles.paper} onClick={() => makePlay('paper')}></div>
-                        <div className={styles.scissors} onClick={() => makePlay('scissors')}></div>
-                        <div className={styles.lizard} onClick={() => makePlay('lizard')}></div>
-                        <div className={styles.spock} onClick={() => makePlay('spock')}></div>
+                        <div
+                            className={styles.rock}
+                            onClick={() => makePlay('rock')}
+                            title='Rock'>
+                        </div>
+                        <div
+                            className={styles.paper}
+                            onClick={() => makePlay('paper')}
+                            title='Paper'>
+                        </div>
+                        <div
+                            className={styles.scissors}
+                            onClick={() => makePlay('scissors')}
+                            title='Scissors'>
+                        </div>
+                        <div
+                            className={styles.lizard}
+                            onClick={() => makePlay('lizard')}
+                            title='Lizard'>
+                        </div>
+                        <div
+                            className={styles.spock}
+                            onClick={() => makePlay('spock')}
+                            title='Spock'>
+                        </div>
                     </div>
                 </div>
                 <Card imagePath={computerPlay} />
