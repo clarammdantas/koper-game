@@ -4,8 +4,11 @@ import React, { useState, useEffect } from 'react'
 // Styles
 import styles from '../../styles/PlayPage.module.scss'
 
+// Components
+import Card from '../../components/Cards'
+
 // Utils
-import getRoundResult, { computerPick, mapResult } from '../../utils/gameUtils'
+import getRoundResult, { computerPick, mapResult, mapNumToPlayer } from '../../utils/gameUtils'
 
 interface GameOptionType {
     rounds: number
@@ -15,10 +18,14 @@ const GameOption: React.FC<GameOptionType> = ({ rounds }) => {
     // currentScore[0] is the human score and currentScore[1] the compter score.
     const [currentScore, setScore] = useState<Array<number>>([0, 0]);
     const [roundWinner, setRoundWinner] = useState<string>('');
+    const [humanPlay, setHumanPlay] = useState<string>('');
+    const [computerPlay, setComputerPlay] = useState<string>('');
     let winner = '';
 
     const makePlay = (human: string) => {
         const computer = computerPick();
+        setHumanPlay('/' + human + '.svg');
+        setComputerPlay('/' + mapNumToPlayer[computer] + '.svg');
         const result = getRoundResult(human, computer);
 
         if (result == 1) {
@@ -46,18 +53,14 @@ const GameOption: React.FC<GameOptionType> = ({ rounds }) => {
     return (
         <React.Fragment>
             <div className={styles.score}>
-                <div>
-                    <p className={styles.score_font}>
-                        <strong>{currentScore[0]} - {currentScore[1]}</strong>
-                    </p>
-                </div>
-                <div>
-                    <p className={styles.round_result_font}>{roundWinner}</p>
-                </div>
+                <p className={styles.score_font}>
+                    <strong>{currentScore[0]} - {currentScore[1]}</strong>
+                </p>
+                <p className={styles.round_result_font}>{roundWinner}</p>
             </div>
             <div className={styles.card_container}>
                 <div className={styles.human_options}>
-                    <div className={styles.card_choice}></div>
+                    <Card imagePath={humanPlay} />
                     <div className={styles.plays}>
                         <div className={styles.rock} onClick={() => makePlay('rock')}></div>
                         <div className={styles.paper} onClick={() => makePlay('paper')}></div>
@@ -66,7 +69,7 @@ const GameOption: React.FC<GameOptionType> = ({ rounds }) => {
                         <div className={styles.spock} onClick={() => makePlay('spock')}></div>
                     </div>
                 </div>
-                <div className={styles.card_choice}></div>
+                <Card imagePath={computerPlay} />
             </div>
         </React.Fragment>
     )
