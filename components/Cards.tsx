@@ -9,7 +9,7 @@ interface CardType {
 const Card: React.FC<CardType> = ({ imagePath }) => {
     return (
         <div className={styles.card_choice}>
-            <img src={imagePath} />
+            <img src={imagePath} alt={imagePath} />
         </div>
     )
 }

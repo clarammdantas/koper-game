@@ -12,10 +12,11 @@ interface FinalResultType {
 const FinalResult: NextPage<FinalResultType> = ({ humanWon }) => {
     const imagePath = humanWon ? '/won.png' : '/lost.png';
     const resultText = humanWon ? 'Você venceu!' : 'Você perdeu :(';
+    const altText = humanWon ? 'sheldon saying live long and prosper' : 'sheldon sad';
 
     return (
         <div className={styles.final_result_content}>
-            <img className={styles.image_final_result} src={imagePath} />
+            <img className={styles.image_final_result} alt={altText} src={imagePath} />
             <p className={styles.text_style}>{resultText}</p>
             <Link href='/'>
                 <button className={styles.play_again_button}>Jogar Novamente</button>
