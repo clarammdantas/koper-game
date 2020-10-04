@@ -6,7 +6,7 @@ const possibleResults = [
     [1, 2, 1, 2, 0],
 ];
 
-const mapPlayerToNum = {
+export const mapPlayerToNum = {
     'scissors': 0,
     'paper': 1,
     'rock': 2,
